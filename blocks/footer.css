@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    max-width: 318px;
+    height: 18px;
+    font-weight: 400px;
+    margin-top: 67px;
+    margin-bottom: 60px;
+    margin-left: 200px;
+    color: grey;
+  }
