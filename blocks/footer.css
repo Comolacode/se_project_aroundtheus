@@ -1,13 +1,12 @@
 .footer {
     display: flex;
     justify-content: center;
-    max-width: 318px;
-    height: 18px;
-    font-weight: 400px;
     margin-top: 67px;
     margin-bottom: 60px;
     margin-left: 200px;
-    color: grey;
+    color: rgba(84, 84, 84, 1);
+    font-size: 18px;
+    line-height: 21.78px;
   }
 
   @media screen and (max-width: 480px) {
