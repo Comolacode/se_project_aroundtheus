@@ -23,6 +23,10 @@
     border-radius: 1px;
     border-color:rgba(255, 255, 255, 1);
   }
+
+  .profile__edit-button:hover{
+    border-color: rgb(153, 153, 153);
+  }
   
   .profile__add-button {
     background: transparent url(../images/add.svg) center no-repeat;
@@ -33,6 +37,10 @@
     cursor: pointer;
     border-radius: 2px;
     border-color: rgba(255, 255, 255, 1);
+  }
+
+  .profile__add-button:hover{
+    background-image: url(../images/addhover.svg);
   }
   
   .profile__title {
