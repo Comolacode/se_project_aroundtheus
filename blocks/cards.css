@@ -11,4 +11,8 @@
     margin: 0;
   }
   
-  
+  @media screen and (max-width: 480px){
+    .cards__list{
+      width: 282px;
+    }
+  }

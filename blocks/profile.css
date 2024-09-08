@@ -18,6 +18,7 @@
     background: transparent url(../images/edit.svg) center no-repeat;
     height: 24px;
     width: 24px;
+    padding: 15px 0 9px 18px;
     grid-area: button;
     cursor: pointer;
     border-radius: 1px;
@@ -73,25 +74,37 @@
     .profile {
       font-family: "Inter", Arial, sans-serif;
       flex-direction: column;
+      padding: 28px 19px 0 19px;
+    }
+
+    .profile__info{
       text-align: center;
     }
 
     .profile__title{
       font-size: 22px;
       line-height: 26.63px;
+      text-align: center;
+      margin: 30px 19px 0 19px;
     }
 
     .profile__description{
       font-size: 14px;
       line-height: 16.94px;
+      text-align: center;
+      margin: 14px 19px 0 19px;
     }
     .profile__edit-button {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 25px;
       width: 18px;
       height: 18px;
-      margin-top: 4px;
-      margin-left: 10px;
     }
     .profile__add-button {
       width: 282px;
+      height: 50px;
+      margin: 36px 19px 36px 19px;
     }
   }

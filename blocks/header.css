@@ -6,10 +6,16 @@
     min-height: 33px;
     margin-top: 45px;
     border-bottom: 1px solid rgba(84, 84, 84, 1);
-    padding-bottom: 37px;
+    padding-bottom: 41px;
+}
 
   @media screen and (max-width: 480px) {
     .header {
       max-width: 320px;
+      height: 56px;
+      border-radius: 1px;
+      display: flex;
+      border-bottom:1px solid rgba(84, 84, 84, 1);
+      padding-bottom: 32px;
     }
   }

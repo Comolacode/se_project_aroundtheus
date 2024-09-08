@@ -1,19 +1,17 @@
 .footer {
     display: flex;
-    justify-content: center;
-    margin-top: 67px;
-    margin-bottom: 60px;
-    margin-left: 200px;
     color: rgba(84, 84, 84, 1);
     font-size: 18px;
     line-height: 21.78px;
+    padding: 67px 200px 60px 200px;
   }
 
   @media screen and (max-width: 480px) {
     .footer {
-      margin-left: 19px;
-      display: flex;
-      justify-content: center;
-      font-family: "Inter", Arial, sans-serif;
+     padding: 48px 19px 36px 19px;
+     width: 282px;
+     display: flex;
+    justify-content: center;
+    font-family: "Inter", Arial, sans-serif;
     }
   }
