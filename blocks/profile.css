@@ -9,7 +9,6 @@
     grid-template-areas:
       "title button"
       "description description";
-    grid-template-columns: minmax(auto, 373px) auto;
     margin-bottom: 36px;
     font-family: "Inter" Arial, sans-serif;
   }
@@ -18,15 +17,16 @@
     background: transparent url(../images/edit.svg) center no-repeat;
     height: 24px;
     width: 24px;
-    padding: 15px 0 9px 18px;
     grid-area: button;
     cursor: pointer;
     border-radius: 1px;
     border-color:rgba(255, 255, 255, 1);
+    margin: 15px 0 9px 18px;
   }
 
   .profile__edit-button:hover{
     border-color: rgb(153, 153, 153);
+    fill: rgb(153, 153, 153);
   }
   
   .profile__add-button {
@@ -34,15 +34,17 @@
     width: 150px;
     height: 50px;
     grid-area: button;
-    margin: auto;
+    margin-left: auto;
     cursor: pointer;
     border-radius: 2px;
     border-color: rgba(255, 255, 255, 1);
+
   }
 
   .profile__add-button:hover{
     background-image: url(../images/addhover.svg);
     border-color:  rgb(153, 153, 153);
+    fill: rgb(153, 153, 153);
   }
   
   .profile__title {
@@ -74,9 +76,12 @@
     .profile {
       font-family: "Inter", Arial, sans-serif;
       flex-direction: column;
-      padding: 28px 19px 0 19px;
     }
 
+    .profile__image{
+      display: block;
+      margin: 0 auto;
+    }
     .profile__info{
       text-align: center;
     }

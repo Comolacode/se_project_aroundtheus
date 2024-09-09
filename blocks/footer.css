@@ -1,5 +1,6 @@
 .footer {
     display: flex;
+    justify-content: space-between;
     color: rgba(84, 84, 84, 1);
     font-size: 18px;
     line-height: 21.78px;
@@ -8,10 +9,10 @@
 
   @media screen and (max-width: 480px) {
     .footer {
-     padding: 48px 19px 36px 19px;
+     padding: 28px 19px 36px 19px;
      width: 282px;
      display: flex;
-    justify-content: center;
+    justify-content: left;
     font-family: "Inter", Arial, sans-serif;
     }
   }

@@ -16,19 +16,22 @@
   .page__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     min-height: 100vh;
     padding: 45px 200px 0 200px;
     flex: 1;
   }
 
   @media screen and (max-width: 480px){
+.page{
+
+}
+
     .page__section{
       max-width: 282px;
       width: 100%;
     }
 
     .page__content{
-      padding: 28px 0 0 0;
+      padding: 28px 19px 0 19px;
     }
   }
