@@ -84,6 +84,7 @@
     }
     .profile__info{
       text-align: center;
+      margin: 0 auto;
     }
 
     .profile__title{
@@ -103,13 +104,13 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin-top: 25px;
+      margin-top: 30px;
       width: 18px;
       height: 18px;
     }
     .profile__add-button {
       width: 282px;
       height: 50px;
-      margin: 36px 19px 36px 19px;
+      margin-top: 36px;
     }
   }
