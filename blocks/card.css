@@ -38,10 +38,11 @@
     width: 21px;
     height: 18px;
     border: none;
-    flex-shrink: 0;
+    opacity: 1;
     cursor: pointer;
+  
   }
 
   .card__like-button:hover{
-    background-image: url(../images/hoverheart.svg);
+    opacity: 0.7;
   }
