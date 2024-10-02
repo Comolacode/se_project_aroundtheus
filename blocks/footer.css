@@ -1,19 +1,18 @@
 .footer {
-    display: block;
-    color: rgba(84, 84, 84, 1);
-    font-size: 18px;
-    line-height: 21.78px;
-    margin-top: 67px;
-    margin-bottom: 60px;
-  }
+  display: block;
+  color: rgba(84, 84, 84, 1);
+  font-size: 18px;
+  line-height: 21.78px;
+  margin-top: 67px;
+  margin-bottom: 60px;
+}
 
-  .text{
-    margin: 0;
+.text {
+  margin: 0;
+}
 
-  }
-
-  @media screen and (max-width: 480px) {
-    .footer {
+@media screen and (max-width: 480px) {
+  .footer {
     padding: 28px 19px 36px 19px;
     width: 282px;
     justify-content: left;
@@ -23,5 +22,5 @@
     font-size: 14px;
     line-height: 16.94px;
     font-weight: 400;
-    }
   }
+}
