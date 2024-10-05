@@ -7,13 +7,13 @@
   margin-bottom: 60px;
 }
 
-.text {
+.footer__text {
   margin: 0;
 }
 
 @media screen and (max-width: 480px) {
   .footer {
-    padding: 28px 19px 36px 19px;
+    padding: 0 19px;
     width: 282px;
     justify-content: left;
     font-family: "Inter", Arial, sans-serif;

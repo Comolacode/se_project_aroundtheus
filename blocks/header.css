@@ -19,5 +19,7 @@
 
   .header__logo {
     margin-left: 27px;
+    max-width: 126px;
+    height: 24px;
   }
 }
