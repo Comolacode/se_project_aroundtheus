@@ -52,6 +52,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  width: 380px;
 }
 
 .profile__description {
@@ -63,6 +64,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 415px;
 }
 
 .profile__image {
@@ -94,10 +96,7 @@
   .profile__title {
     font-size: 22px;
     line-height: 26.63px;
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    max-width: 196px;
   }
 
   .profile__description {
@@ -105,6 +104,7 @@
     line-height: 16.94px;
     text-align: center;
     margin: 14px 19px 0 19px;
+    max-width: 282px;
   }
   .profile__edit-button {
     display: flex;
