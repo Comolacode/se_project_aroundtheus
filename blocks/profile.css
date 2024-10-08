@@ -3,6 +3,7 @@
   align-items: center;
   padding-top: 40px;
   height: 100%;
+  column-gap: 24px;
 }
 
 .profile__info {
@@ -34,6 +35,7 @@
   grid-area: button;
   border-radius: 2px;
   margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
   border: 2px solid rgba(255, 255, 255, 1);
 }
@@ -73,10 +75,9 @@
   border-radius: 50%;
   object-fit: cover;
   background-position: center;
-  margin-right: 24px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   .profile {
     font-family: "Inter", Arial, sans-serif;
     flex-direction: column;
@@ -106,6 +107,7 @@
     margin: 14px 19px 0 19px;
     max-width: 282px;
   }
+
   .profile__edit-button {
     display: flex;
     justify-content: flex-end;
