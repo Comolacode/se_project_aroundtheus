@@ -35,7 +35,6 @@
   grid-area: button;
   border-radius: 2px;
   margin-left: auto;
-  margin-right: auto;
   cursor: pointer;
   border: 2px solid rgba(255, 255, 255, 1);
 }
@@ -54,7 +53,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  width: 380px;
 }
 
 .profile__description {
@@ -66,7 +64,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 415px;
 }
 
 .profile__image {
@@ -77,7 +74,7 @@
   background-position: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 620px) {
   .profile {
     font-family: "Inter", Arial, sans-serif;
     flex-direction: column;
