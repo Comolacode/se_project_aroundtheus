@@ -19,18 +19,27 @@ padding: 36px;
 margin: auto;
 background-color: #fff;
 border-radius: 10px;
+width: 430px;
+height:330px;
 }
 
 .modal__heading{
-font:inter;
 font-weight: 900;
 size: 24px;
-color: black;
+color: #000;
 }
 
 .modal__form{
 border:none;
+color: #000;
 
+}
+
+.modal__button{
+    color: #fff;
+    background-color: #000;
+    width: 358px;
+    height: 50px;
 }
 
 .modal__close{
