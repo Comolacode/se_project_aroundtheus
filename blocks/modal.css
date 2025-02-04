@@ -1,16 +1,17 @@
 .modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding:0 19px;
-    display: none;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+z-index: 999;
+background-color: rgba(0, 0, 0, 0.5);
+padding:0 19px;
+display: none;
 }
 
 .modal__opened{
-    display: flex;
+display: flex;
 }
 
 .modal__container{
@@ -27,21 +28,26 @@ height:330px;
 font-weight: 900;
 width: 330px;
 height:23px;
-size: 24px;
+font-size: 24px;
 color: #000;
 }
 
-.modal__form{
+.modal__form input{
 border: none;
+width: 358px;
+height: 28px;
+padding: 20px 0;
+border-bottom: 2px solid #000;
+outline: none;
+font-size: 16px;
 color: #000;
-
 }
 
 .modal__button{
-    color: #fff;
-    background-color: #000;
-    width: 358px;
-    height: 50px;
+color: #fff;
+background-color: #000;
+width: 358px;
+height: 50px;
 }
 
 .modal__close{
@@ -49,8 +55,8 @@ border: none;
 background-color: transparent;   
 cursor: pointer;
 position: absolute;
-bottom:calc(100% + 5);
-left: calc(100% + 5);
+top: -45px;
+right: -45px; 
 width: 40px;
 height: 40px;
 background-repeat: no-repeat;
