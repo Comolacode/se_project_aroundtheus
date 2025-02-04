@@ -25,12 +25,14 @@ height:330px;
 
 .modal__heading{
 font-weight: 900;
+width: 330px;
+height:23px;
 size: 24px;
 color: #000;
 }
 
 .modal__form{
-border:none;
+border: none;
 color: #000;
 
 }
@@ -47,8 +49,8 @@ border: none;
 background-color: transparent;   
 cursor: pointer;
 position: absolute;
-top: -45px;
-right: -45px; 
+bottom:calc(100% + 5);
+left: calc(100% + 5);
 width: 40px;
 height: 40px;
 background-repeat: no-repeat;
