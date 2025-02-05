@@ -16,7 +16,6 @@ display: flex;
 
 .modal__container{
 position: relative;
-padding-left: 36px;
 margin: auto;
 background-color: #fff;
 border-radius: 10px;
@@ -31,6 +30,7 @@ height:23px;
 font-size: 24px;
 color: #000;
 margin-top: 34px;
+margin-left: 36px;
 margin-bottom: 54px;
 }
 
@@ -38,16 +38,18 @@ margin-bottom: 54px;
 border: none;
 width: 358px;
 height: 28px;
-padding: 20px 0;
 font-size: 16px;
 outline: none;
 color: #000;
 }
 
 .modal__form input {
-width: 100%;
+width: 358px;
+height: 28px;
 border: none;
 border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+margin-left: 36px;
+margin-right: 36px;
 padding: 8px 5px;
 font-size: 16px;
 outline: none;
@@ -55,9 +57,10 @@ background: transparent;
 }
 
 .modal__button{
-margin-top: 20px;
+margin-top: 48px;
 width: 358px;
 height: 50px;
+margin-left: 36px;
 color: #fff;
 background-color: #000;
 }
