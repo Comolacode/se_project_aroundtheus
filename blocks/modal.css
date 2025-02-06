@@ -10,7 +10,7 @@ padding:0 19px;
 display: none;
 }
 
-.modal__opened{
+.modal_opened{
 display: flex;
 }
 
