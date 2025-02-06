@@ -81,7 +81,7 @@ background-image: url('../images/Close\ Icon.svg');
 
 @media screen and (max-width: 620px) {
 .modal__close {
-right: -5px;
+margin-right: 45px;
 margin-top: -13px;
 }
 
