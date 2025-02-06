@@ -78,3 +78,38 @@ background-repeat: no-repeat;
 background-size: contain;
 background-image: url('../images/Close\ Icon.svg');
 }
+
+@media screen and (max-width: 620px) {
+.modal__close {
+right: -5px;
+margin-top: -13px;
+}
+
+.modal__heading{
+margin-left: 22px;
+}
+
+.modal__container{
+height: 322px;
+width: 282px;
+}
+
+.modal__form{
+width: 238px;
+}
+
+.modal__form input{
+height: 26px;
+width: 238px;
+margin-left: 22px;
+margin-right: 22px;
+
+}
+
+.modal__button{
+height: 46px;
+width: 238px;
+margin-left: 22px;
+margin-right: 22px;
+}
+}
