@@ -25,5 +25,10 @@ const initialCards = [
     },
   ];
   
-  console.log("initialCards");
+  const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditmodal = document.querySelector("#profile-edit-modal");
+
+profileEditButton.addEventListener("click", () => {
+  profileEditmodal.classList.add("modal_opened");
+});
   
