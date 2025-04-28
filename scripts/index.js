@@ -24,9 +24,12 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+//* ---------Elements--------- *//
+//* --------------------------*//
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditmodal = document.querySelector("#profile-edit-modal");
+const profileCloseModal = document.querySelector("#profile-close-modal");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -35,16 +38,31 @@ const profileDescriptionInput = document.querySelector(
 );
 
 const profileEditForm = profileEditmodal.querySelector(".modal__form");
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+
+//* --------------------------*//
+//* ---------Functions--------- *//
+//* --------------------------*//
 
 function closePopup() {
-  modal.classList.remove("modal_opened");
+  profileEditmodal.classList.remove("modal_opened");
 }
-function handleprofileEditSubmit(event) {
-  event.preventDefault();
+
+//* --------------------------*//
+//* ---------Event Handlers--------- *//
+//* --------------------------*//
+
+function handleProfileEditSubmit(e) {
+  e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closePopup();
 }
+
+//* --------------------------*//
+//* ---------Event Listeners--------- *//
+//* --------------------------*//
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
@@ -52,20 +70,8 @@ profileEditButton.addEventListener("click", () => {
   profileEditmodal.classList.add("modal_opened");
 });
 
-const closeButton = document.querySelector("#profile-close-modal");
-const modal = document.querySelector("#profile-edit-modal");
+profileCloseModal.addEventListener("click", closePopup);
 
-closeButton.addEventListener("click", function () {
-  closePopup();
-});
+profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
-profileEditForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-  closePopup();
-});
-
-profileEditCloseButton.addEventListener("click", closePopup);
-
-profileEditForm.addEventListener("click", handleprofileEditSubmit);
+initialCards.forEach((cardData) => {});
