@@ -1,116 +1,122 @@
-.modal{
-position: fixed;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-z-index: 999;
-background-color: rgba(0, 0, 0, 0.5);
-padding:0 19px;
-display: none;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 19px;
+  display: none;
 }
 
-.modal_opened{
-display: flex;
+.modal_opened {
+  display: flex;
 }
 
-.modal__container{
-position: relative;
-margin: auto;
-background-color: #fff;
-border-radius: 10px;
-width: 430px;
-height:330px;
+.modal__container {
+  position: relative;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 430px;
+  height: 330px;
 }
 
-.modal__heading{
-font-weight: 900;
-width: 330px;
-height:23px;
-font-size: 24px;
-color: #000;
-margin-top: 34px;
-margin-left: 36px;
-margin-bottom: 54px;
+.modal__heading {
+  font-weight: 900;
+  width: 330px;
+  height: 23px;
+  font-size: 24px;
+  color: #000;
+  margin-top: 34px;
+  margin-left: 36px;
+  margin-bottom: 39px;
 }
 
 .modal__form {
-border: none;
-width: 358px;
-height: 28px;
-font-size: 16px;
-outline: none;
-color: #000;
+  border: none;
+  width: 358px;
+  height: 28px;
+  font-size: 16px;
+  outline: none;
+  color: #000;
 }
 
 .modal__form input {
-width: 358px;
-height: 28px;
-border: none;
-border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-margin-left: 36px;
-margin-right: 36px;
-padding: 8px 5px;
-font-size: 16px;
-outline: none;
-background: transparent;
+  width: 358px;
+  height: 28px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin-left: 36px;
+  margin-right: 36px;
+  padding: 8px 5px;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
 }
 
-.modal__button{
-margin-top: 48px;
-width: 358px;
-height: 50px;
-margin-left: 36px;
-color: #fff;
-background-color: #000;
+.modal__button {
+  margin-top: 48px;
+  width: 358px;
+  height: 50px;
+  margin-left: 36px;
+  color: #fff;
+  background-color: #000;
 }
 
-.modal__close{
-border: none;
-background-color: transparent;   
-cursor: pointer;
-position: absolute;
-top: -45px;
-right: -45px; 
-width: 40px;
-height: 40px;
-background-repeat: no-repeat;
-background-size: contain;
-background-image: url('../images/Close\ Icon.svg');
+.modal__button:hover {
+  opacity: 0.6;
 }
 
+.modal__close {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/Close\ Icon.svg");
+}
+
+.modal__close:hover {
+  opacity: 0.6;
+}
 
 @media screen and (max-width: 620px) {
-.modal__close {
-margin-right: 45px;
-margin-top: -13px;
-}
+  .modal__close {
+    margin-right: 45px;
+    margin-top: -13px;
+  }
 
-.modal__heading{
-margin-left: 22px;
-}
+  .modal__heading {
+    margin-left: 22px;
+  }
 
-.modal__container{
-height: 322px;
-width: 282px;
-}
+  .modal__container {
+    height: 322px;
+    width: 282px;
+  }
 
-.modal__form{
-width: 238px;
-}
+  .modal__form {
+    width: 238px;
+  }
 
-.modal__form input{
-height: 26px;
-width: 238px;
-margin-left: 22px;
-margin-right: 22px;
+  .modal__form input {
+    height: 26px;
+    width: 238px;
+    margin-left: 22px;
+    margin-right: 22px;
+  }
 
-}
-
-.modal__button{
-height: 46px;
-width: 238px;
-margin-left: 22px;
-margin-right: 22px;
-}
+  .modal__button {
+    height: 46px;
+    width: 238px;
+    margin-left: 22px;
+    margin-right: 22px;
+  }
 }
