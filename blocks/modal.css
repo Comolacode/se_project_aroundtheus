@@ -19,8 +19,8 @@
   margin: auto;
   background-color: #fff;
   border-radius: 10px;
-  width: 430px;
-  height: 330px;
+  max-width: 430px;
+  min-height: 330px;
 }
 
 .modal__heading {
@@ -43,7 +43,7 @@
   color: #000;
 }
 
-.modal__form input {
+.modal__input {
   width: 358px;
   height: 28px;
   border: none;
