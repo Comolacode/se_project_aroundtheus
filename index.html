@@ -44,8 +44,12 @@
     </div>
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="profile-close-modal"></button>
-        <p class="modal__heading">Edit profile</p>
+        <button
+          class="modal__close"
+          id="profile-close-modal"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">Edit profile</h2>
 
         <form class="modal__form">
           <input
@@ -53,12 +57,14 @@
             id="profile-title-input"
             type="text"
             placeholder="Name"
+            required
           />
           <input
             class="modal__input"
             id="profile-description-input"
             type="text"
             placeholder="Description"
+            required
           />
           <button class="button modal__button" type="submit">Save</button>
         </form>
