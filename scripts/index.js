@@ -24,8 +24,8 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
 //* ---------Elements--------- *//
-//* --------------------------*//
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -36,52 +36,65 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+
+const addCardModal = document.querySelector("#add-card-modal");
+const addCardButton = document.querySelector("#add-card-button");
+const addCardCloseModal = document.querySelector("#add-card-close");
+const addCardFormElement = addCardModal.querySelector(".modal__form");
+
+const cardTitleInput = addCardFormElement.querySelector(
+  ".modal__input_type_title"
+);
+const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
-//* --------------------------*//
 //* ---------Functions--------- *//
-//* --------------------------*//
+function openPopup(modal) {
+  modal.classList.add("modal_opened");
+}
 
-function closePopup() {
+function closePopup(modal) {
   profileEditModal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
-  //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
   console.log(cardElement);
-  //create a new object with the data from the initialCards array
-  //access the card title and image and store them in variables
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
-  //set the path to the image to the link field of the object
+
   cardImageEl.src = cardData.link;
-  //set the image alt text to the name field of the object
   cardImageEl.alt = cardData.name;
-  //set the card title to the name field of the object, too
   cardTitleEl.textContent = cardData.name;
-  //return the ready HTML element with the filled-in data
+
+  const likeButton = cardElement.querySelector(".card__like-button");
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
   return cardElement;
 }
 
-//* --------------------------*//
 //* ---------Event Handlers--------- *//
-//* --------------------------*//
 
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopup();
+  closePopup(profileEditModal);
 }
 
-//* --------------------------*//
+function handleAddCardFormSubmit(e) {
+  e.preventDefault();
+  const cardElement = getCardElement();
+  closePopup(addCardModal);
+}
+
 //* ---------Event Listeners--------- *//
-//* --------------------------*//
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
