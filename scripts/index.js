@@ -137,7 +137,7 @@ profileEditButton.addEventListener("click", () => {
 profileCloseModal.addEventListener("click", () => closePopup(profileEditModal));
 addCardCloseModal.addEventListener("click", () => closePopup(addCardModal));
 addCardButton.addEventListener("click", () => {
-  addCardModal.classList.add("modal_opened");
+  openPopup(addCardModal);
 });
 
 //* ---------initialCards---------- *//
@@ -146,11 +146,6 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.append(cardElement);
 });
-
-//const likeButton = document.querySelectorAll(".card__like-button");
-//likeButton.forEach((likeButton) => {
-//likeButton.addEventListener("click", () => {});
-//});
 
 previewCloseButton.addEventListener("click", () =>
   closePopup(previewImageModal)
