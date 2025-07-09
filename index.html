@@ -55,22 +55,31 @@
         ></button>
         <h2 class="modal__heading">Edit profile</h2>
 
-        <form class="modal__form">
+        <form class="popup__form">
           <input
-            class="modal__input"
+            class="popup__input"
             id="profile-title-input"
             type="text"
             placeholder="Name"
             required
+            minlength="2"
+            maxlength="40"
           />
+          <span class="popup__error" id="profile-title-input-error"></span>
           <input
-            class="modal__input"
+            class="popup__input"
             id="profile-description-input"
             type="text"
             placeholder="Description"
             required
+            minlength="2"
+            maxlength="200"
           />
-          <button class="button modal__button" type="submit">Save</button>
+          <span
+            class="popup__error"
+            id="profile-description-input-error"
+          ></span>
+          <button class="button popup__button" type="submit">Save</button>
         </form>
       </div>
     </div>
@@ -79,22 +88,31 @@
       <div class="modal__container">
         <button class="modal__close" id="add-card-close" type="button"></button>
         <h3 class="modal__heading">New place</h3>
-        <form class="modal__form">
+        <form class="popup__form">
           <input
-            class="modal__input modal__input_type_title"
+            class="popup__input popup__input_type_title"
             type="text"
+            id="card-title-input"
             name="name"
             placeholder="Title"
             required
+            minlength="2"
+            maxlength="30"
           />
+          <span class="popup__error" id="card-title-input-error"></span>
+
           <input
-            class="modal__input modal__input_type_url"
+            class="popup__input popup__input_type_url"
             type="url"
+            id="card-url-input"
             name="link"
             placeholder="Image URL"
             required
           />
-          <button class="button modal__button" type="submit">Save</button>
+          <span class="popup__error" id="card-url-input-error"></span>
+          <button class="button popup__button" type="submit" disabled>
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -125,5 +143,6 @@
       </li>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>

@@ -43,18 +43,18 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const profileEditForm = profileEditModal.querySelector(".popup__form");
 
-const addCardFormElement = addCardModal.querySelector(".modal__form");
+const addCardFormElement = addCardModal.querySelector(".popup__form");
 const cardTitleInput = addCardFormElement.querySelector(
-  ".modal__input_type_title"
+  ".popup__input_type_title"
 );
-const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+const cardUrlInput = addCardFormElement.querySelector(".popup__input_type_url");
 
-const nameInput = addCardFormElement.querySelector(".modal__input_type_name");
-const jobInput = addCardFormElement.querySelector(
-  ".modal__input_type_description"
-);
+//const nameInput = addCardFormElement.querySelector(".popup__input_type_name");
+//const jobInput = addCardFormElement.querySelector(
+// ".popup__input_type_description"
+//);
 
 const previewImage = previewImageModal.querySelector(".modal__image");
 const previewCaption = previewImageModal.querySelector(".modal__caption");
@@ -150,3 +150,20 @@ initialCards.forEach((cardData) => {
 previewCloseButton.addEventListener("click", () =>
   closePopup(previewImageModal)
 );
+
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+    if (e.target === modal) {
+      closePopup(modal);
+    }
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closePopup(openedModal);
+    }
+  }
+});
