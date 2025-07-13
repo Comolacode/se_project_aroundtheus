@@ -45,6 +45,20 @@ function toggleButtonState(inputEls, buttonEl, config) {
   }
 }
 
+function resetValidation(formEl, config) {
+  const inputEls = [...formEl.querySelectorAll(config.inputSelector)];
+  const submitButtonEl = formEl.querySelector(config.submitButtonSelector);
+
+  inputEls.forEach((inputEl) => {
+    const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
+    inputEl.classList.remove(config.inputErrorClass);
+    errorEl.classList.remove(config.errorClass);
+    errorEl.textContent = "";
+  });
+
+  toggleButtonState(inputEls, submitButtonEl, config);
+}
+
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
