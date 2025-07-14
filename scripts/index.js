@@ -131,6 +131,7 @@ function handleAddCardFormSubmit(e) {
 
   closePopup(addCardModal);
   addCardFormElement.reset();
+  resetValidation(addCardFormElement, config);
 }
 
 //* ---------Event Listeners--------- *//
