@@ -55,7 +55,7 @@
         ></button>
         <h2 class="modal__heading">Edit profile</h2>
 
-        <form class="popup__form">
+        <form class="popup__form" id="profile-form">
           <input
             class="popup__input"
             id="profile-title-input"
@@ -79,7 +79,7 @@
             class="popup__error"
             id="profile-description-input-error"
           ></span>
-          <button class="button popup__button" type="submit">Save</button>
+          <button class="popup__button" type="submit" disabled>Save</button>
         </form>
       </div>
     </div>
@@ -88,7 +88,7 @@
       <div class="modal__container">
         <button class="modal__close" id="add-card-close" type="button"></button>
         <h3 class="modal__heading">New place</h3>
-        <form class="popup__form">
+        <form class="popup__form" id="card-form">
           <input
             class="popup__input popup__input_type_title"
             type="text"
@@ -110,9 +110,7 @@
             required
           />
           <span class="popup__error" id="card-url-input-error"></span>
-          <button class="button popup__button" type="submit" disabled>
-            Save
-          </button>
+          <button class="popup__button" type="submit" disabled>Save</button>
         </form>
       </div>
     </div>
@@ -142,7 +140,6 @@
         </div>
       </li>
     </template>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validation.js"></script>
+    <script type="module" src="./pages/index.js"></script>
   </body>
 </html>
