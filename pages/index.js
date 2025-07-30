@@ -1,7 +1,6 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import { initialCards, validationSettings } from "../utils/constants.js";
-import { v4 as uuidv4 } from "uuid";
 
 document.addEventListener("DOMContentLoaded", () => {
   const profileEditModal = document.querySelector("#profile-edit-modal");
