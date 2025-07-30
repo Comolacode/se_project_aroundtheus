@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cardListEl.prepend(cardElement);
     addCardFormElement.reset();
     cardFormValidator.resetValidation();
-
     closePopup(addCardModal);
   }
   //* ---------Event Listeners--------- *//
@@ -118,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   addCardButton.addEventListener("click", () => {
-    addCardFormElement.reset();
     cardFormValidator.resetValidation();
     openPopup(addCardModal);
   });
