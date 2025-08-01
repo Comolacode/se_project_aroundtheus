@@ -17,7 +17,9 @@ module.exports = {
   stats: "errors-only",
   mode: "development",
   devServer: {
-    static: path.resolve(__dirname, "./dist"),
+    static: {
+      directory: path.resolve(__dirname, "./dist"),
+    },
     compress: true,
     port: 8080,
     open: true,
@@ -33,7 +35,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: { importLoaders: 1 } },
+          "postcss-loader",
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|webp|gif|woff2?|eot|ttf|otf)$/i,

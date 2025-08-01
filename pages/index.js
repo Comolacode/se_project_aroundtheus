@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const titleValue = cardTitleInput.value;
     const urlValue = cardUrlInput.value;
-    const cardData = { name: titleValue, link: urlValue, id: uuidv4() };
+    const cardData = { name: titleValue, link: urlValue };
     const cardElement = createCard(cardData);
 
     cardListEl.prepend(cardElement);
