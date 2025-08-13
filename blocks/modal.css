@@ -142,7 +142,7 @@
   height: 40px;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("../images/Close Icon.svg");
+  background-image: url("../images/Close-Icon.svg");
 }
 
 .modal__close:hover {
@@ -153,7 +153,7 @@
   position: absolute;
   top: -50px;
   right: -65px;
-  background-image: url("../images/Close Icon.svg");
+  background-image: url("../images/Close-Icon.svg");
 }
 .modal__close_type_preview:hover {
   opacity: 0.6;
