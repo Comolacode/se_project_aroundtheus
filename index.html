@@ -17,19 +17,11 @@
       </header>
       <main class="page__section">
         <section class="profile page__section">
-          <div class="profile__avatar-container">
-            <img
-              src="./images/jacques-cousteau.jpg"
-              alt="Avatar"
-              class="profile__image"
-            />
-            <button
-              type="button"
-              id="profile-avatar-button"
-              class="profile__avatar-edit"
-            ></button>
-          </div>
-
+          <img
+            src="./images/jacques-cousteau.jpg"
+            alt="Avatar"
+            class="profile__image"
+          />
           <div class="profile__info">
             <h1 class="profile__title">Jessica Garcia</h1>
 
@@ -135,45 +127,6 @@
         ></button>
         <img class="modal__image" src="#" alt="" />
         <p class="modal__caption"></p>
-      </div>
-    </div>
-
-    <div class="modal" id="avatar-edit-modal">
-      <div class="modal__container">
-        <button
-          class="modal__close"
-          id="avatar-close-modal"
-          type="button"
-        ></button>
-        <h2 class="modal__heading">Edit Avatar</h2>
-        <form class="popup__form" id="avatar-form">
-          <input
-            class="popup__input"
-            id="avatar-url-input"
-            name="avatar"
-            type="url"
-            placeholder="Avatar URL"
-            required
-          />
-          <span class="popup__error" id="avatar-url-input-error"></span>
-          <button class="popup__button" type="submit" disabled>Save</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="modal" id="confirm-delete-modal">
-      <div class="modal__container">
-        <button
-          class="modal__close"
-          id="confirm-delete-close"
-          type="button"
-        ></button>
-        <h2 class="modal__heading">Are you sure?</h2>
-        <form class="popup__form" id="confirm-delete-form">
-          <button class="popup__button popup__button_type_delete" type="submit">
-            Yes, delete
-          </button>
-        </form>
       </div>
     </div>
 

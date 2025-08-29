@@ -40,30 +40,6 @@
   justify-content: center;
 }
 
-#confirm-delete-modal .modal__container {
-  width: 430px;
-  height: 181px;
-}
-
-#confirm-delete-modal .popup__button {
-  width: 358px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 36px;
-  margin-left: 36px;
-  margin-right: 36px;
-}
-
-#confirm-delete-modal .popup__button:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-#avatar-edit-modal .modal__container {
-  width: 430px;
-  height: 272px;
-}
-
 .modal__image {
   max-width: 75vw;
   max-height: 75vh;
@@ -233,19 +209,5 @@
     margin-right: 22px;
     font-size: 14px;
     line-height: 100%;
-  }
-
-  #confirm-delete-modal .modal__container {
-    position: relative;
-    height: 330px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #confirm-delete-modal .modal__heading {
-    font-size: 18px;
-  }
-
-  #confirm-delete-modal .popup__button {
   }
 }
