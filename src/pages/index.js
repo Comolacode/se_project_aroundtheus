@@ -1,13 +1,16 @@
-import Card from "./components/Card.js";
-import FormValidator from "./components/FormValidator.js";
-import Section from "./components/Section.js";
-import PopupWithImage from "./components/PopupWithImage.js";
-import PopupWithForm from "./components/PopupWithForm.js";
-import UserInfo from "./components/UserInfo.js";
-import Api from "./components/Api.js";
-import PopupWithConfirmation from "./components/PopupWithConfirmation.js";
+import "./index.css";
+import logo from "../images/logo.svg";
+import avatar from "../images/jacques-cousteau.jpg";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
+import Api from "../components/Api.js";
+import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 //import { renderLoading } from "../utils/utils.js";
-import { initialCards, validationSettings } from "./constants.js";
+import { initialCards, validationSettings } from "../utils/constants.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const api = new Api({
@@ -18,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  const headerLogo = document.querySelector(".header__logo");
+  headerLogo.src = logo;
+  const profileImage = document.querySelector(".profile__image");
+  profileImage.src = avatar;
   const profileEditButton = document.querySelector("#profile-edit-button");
   const addCardButton = document.querySelector("#add-card-button");
   const profileEditModal = document.querySelector("#profile-edit-modal");
