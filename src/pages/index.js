@@ -1,3 +1,4 @@
+import { initialCards } from "../utils/constants.js";
 import "./index.css";
 import logo from "../images/logo.svg";
 import avatar from "../images/jacques-cousteau.jpg";
@@ -10,7 +11,7 @@ import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
 import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 //import { renderLoading } from "../utils/utils.js";
-import { initialCards, validationSettings } from "../utils/constants.js";
+import { validationSettings } from "../utils/constants.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const api = new Api({
@@ -70,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const imagePopup = new PopupWithImage("#preview-image-modal");
   imagePopup.setEventListeners();
 
+  let currentUserId;
+
   function handleCardClick({ name, link }) {
     imagePopup.open({ name, link });
   }
@@ -79,44 +82,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createCard(item) {
     const card = new Card(
-      {
-        ...item,
-        handleDeleteClick: (cardElement, cardId) => {
-          confirmDeletePopup.setSubmitAction(() => {
-            if (cardId) {
-              api
-                .deleteCard(cardId)
-                .then(() => {
-                  cardElement.remove();
-                  confirmDeletePopup.close();
-                })
-                .catch((err) => console.error("Error deleting card:", err));
-            } else {
-              cardElement.remove();
-              confirmDeletePopup.close();
-            }
-          });
-          confirmDeletePopup.open(cardId, cardElement);
-        },
-      },
+      { ...item, currentUserId },
       "#card-template",
-      handleCardClick
+      handleCardClick,
+      (cardElement, cardId) => {
+        confirmDeletePopup.open();
+        //if (item.isDemo) {
+        //cardElement.remove();
+        //} else {
+        //console.log("Delete handler called", cardId);
+        //confirmDeletePopup.open(cardElement, cardId);
+
+        confirmDeletePopup.setSubmitAction(() => {
+          //console.log("Submit action triggered", cardId);
+          if (item._id) {
+            api
+              .deleteCard(cardId)
+              .then(() => {
+                cardElement.remove();
+                confirmDeletePopup.close();
+              })
+              .catch((err) => console.error("Error deleting card:", err));
+          } else {
+            cardElement.remove();
+            confirmDeletePopup.close();
+          }
+        });
+      },
+      //confirmDeletePopup.open(cardElement, item._id);
+      api
     );
     return card.generateCard();
   }
 
+  //"#card-template",
+  //handleCardClick,
+  //api
+
   const cardSection = new Section(
     {
       items: [],
-      renderer: (item) => createCard(item),
+      renderer: (item) => {
+        const cardElement = createCard(item);
+        cardSection.addItem(cardElement, false);
+      },
     },
     ".cards__list"
   );
 
-  let currentUserId;
-
   Promise.all([api.getUserInfo(), api.getInitialCards()])
-    .then(([userData, cards]) => {
+    .then(([userData, apiCards]) => {
       currentUserId = userData._id;
 
       //console.log("API cards:", userData);
@@ -127,12 +142,37 @@ document.addEventListener("DOMContentLoaded", () => {
         avatar: userData.avatar,
       });
 
-      const combinedCards = [...cards, ...initialCards].map((card) => ({
-        ...card,
-        currentUserId,
-      }));
+      //console.log("cards from api:", cards);
+
+      //const cardsWithUser = apiCards.map((card) => ({
+      // ...card,
+      // currentUserId,
+      //}));
+      //cardSection.setItems(cardsWithUser);
+
+      //api.getInitialCards().then((cards) => {
+      //console.log("Initial cards from API:", cards);
+      //});
+
+      //const combinedCards = [...card, ...initialCards].map((card) => ({
+      //...card,
+      //currentUserId,
+      //}));
+      //cardSection.setItems(combinedCards);
+      //})
+
+      const combinedCards = [
+        ...apiCards.map((card) => ({ ...card, currentUserId, isDemo: false })),
+        ...initialCards.map((card) => ({
+          ...card,
+          currentUserId,
+          isDemo: true,
+        })),
+      ];
+
       cardSection.setItems(combinedCards);
     })
+
     .catch((err) => console.error("Error loading user or cards:", err));
 
   const profileFormPopup = new PopupWithForm(
@@ -149,10 +189,10 @@ document.addEventListener("DOMContentLoaded", () => {
             about: res.about,
             avatar: res.avatar,
           });
-        });
-      profileFormPopup.close();
+          profileFormPopup.close();
+        })
 
-      //.catch((err) => console.error("Error updating user info:", err));
+        .catch((err) => console.error("Error updating user info:", err));
     }
   );
 
@@ -166,10 +206,10 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((cardData) => {
         const element = createCard({ ...cardData, currentUserId });
-        cardSection.addItem(element);
-        //addCardPopup.close();
-      });
-    //.catch((err) => console.error("Error adding card:", err));
+        cardSection.addItem(element, true);
+        addCardPopup.close();
+      })
+      .catch((err) => console.error("Error adding card:", err));
   });
 
   addCardPopup.setEventListeners();
