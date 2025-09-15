@@ -49,7 +49,7 @@
 }
 
 .card__like-button_active {
-  background-image: url(../images/Union.svg);
+  background: transparent url(../images/Union.svg) center no-repeat;
 }
 
 .card__like-button:hover {

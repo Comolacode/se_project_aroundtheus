@@ -40,6 +40,30 @@
   justify-content: center;
 }
 
+#confirm-delete-modal .modal__container {
+  width: 430px;
+  height: 181px;
+}
+
+#confirm-delete-modal .popup__button {
+  width: 358px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 36px;
+  margin-left: 36px;
+  margin-right: 36px;
+}
+
+#confirm-delete-modal .popup__button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#avatar-edit-modal .modal__container {
+  width: 430px;
+  height: 272px;
+}
+
 .modal__image {
   max-width: 75vw;
   max-height: 75vh;
@@ -209,5 +233,38 @@
     margin-right: 22px;
     font-size: 14px;
     line-height: 100%;
+  }
+
+  #confirm-delete-modal .modal__container {
+    width: 300px;
+    min-height: auto;
+  }
+
+  #confirm-delete-modal .modal__heading {
+    text-align: left;
+    margin-top: 25px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    width: auto;
+  }
+
+  #confirm-delete-modal .popup__button {
+    width: 238px;
+    margin: 20px;
+    height: 46px;
+    font: 14px;
+  }
+
+  #avatar-edit-modal .modal__container {
+    width: 282px;
+    height: auto;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  #avatar-edit-modal .popup__input {
+    width: 238px;
+    margin-left: 22px;
+    margin-right: 22px;
   }
 }
