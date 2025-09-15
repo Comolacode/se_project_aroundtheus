@@ -10,7 +10,6 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
 import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
-//import { renderLoading } from "../utils/utils.js";
 import { validationSettings } from "../utils/constants.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -82,11 +81,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createCard(item) {
     const card = new Card(
-      { ...item, currentUserId },
+      {
+        name: item.name,
+        link: item.link,
+        isLiked: item.isLiked || false,
+        _id: item._id,
+        _ownerId: item.owner?._id || item.owner,
+        currentUserId: currentUserId,
+      },
       "#card-template",
       handleCardClick,
       (cardElement, cardId) => {
         confirmDeletePopup.open();
+        //...item, currentUserId
         //if (item.isDemo) {
         //cardElement.remove();
         //} else {
@@ -95,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         confirmDeletePopup.setSubmitAction(() => {
           //console.log("Submit action triggered", cardId);
-          if (item._id) {
+          if (cardId) {
             api
               .deleteCard(cardId)
               .then(() => {
@@ -162,12 +169,18 @@ document.addEventListener("DOMContentLoaded", () => {
       //})
 
       const combinedCards = [
-        ...apiCards.map((card) => ({ ...card, currentUserId, isDemo: false })),
-        ...initialCards.map((card) => ({
+        ...apiCards.map((card) => ({
           ...card,
           currentUserId,
-          isDemo: true,
+          isLiked: card.isLiked || false,
+          isDemo: false,
         })),
+        //...initialCards.map((card) => ({
+        //...card,
+        //currentUserId,
+        //isLiked: card.isLiked || false,
+        //isDemo: true,
+        //})),
       ];
 
       cardSection.setItems(combinedCards);
@@ -205,7 +218,12 @@ document.addEventListener("DOMContentLoaded", () => {
         link: formData.link,
       })
       .then((cardData) => {
-        const element = createCard({ ...cardData, currentUserId });
+        const element = createCard({
+          ...cardData,
+          currentUserId,
+          isLiked: cardData.isLiked || false,
+        });
+
         cardSection.addItem(element, true);
         addCardPopup.close();
       })

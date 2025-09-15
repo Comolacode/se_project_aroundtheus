@@ -2,9 +2,10 @@ export default class Card {
   constructor(data, cardSelector, handleImageClick, handleDeleteClick, api) {
     this._name = data.name;
     this._link = data.link;
-    this._likes = data.likes || [];
+    this._isLiked = data.isLiked || false;
+
     this._id = data._id;
-    //this._ownerId = data.owner;
+    this._ownerId = data.owner?._id || data._ownerId;
     this._currentUserId = data.currentUserId;
 
     this._cardSelector = cardSelector;
@@ -32,29 +33,24 @@ export default class Card {
     this._titleElement.textContent = this._name;
 
     this._updateLikeView();
+
     this._setEventListeners();
 
     return this._element;
   }
+
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => this.handleLikeClick());
-
     this._deleteButton.addEventListener("click", () => {
       this._handleDeleteClick(this._element, this._id);
     });
-
     this._imageElement.addEventListener("click", () => {
       this._handleImageClick({ name: this._name, link: this._link });
     });
   }
 
-  removeCard() {
-    this._element.remove();
-    this._element = null;
-  }
-
   _isLikedByCurrentUser() {
-    return this._likes.some((user) => user._id === this._currentUserId);
+    return this._isLiked;
   }
 
   _updateLikeView() {
@@ -79,9 +75,14 @@ export default class Card {
 
     request
       .then((updatedCard) => {
-        this._likes = updatedCard.likes;
+        this._isLiked = updatedCard.isLiked;
         this._updateLikeView();
       })
       .catch((err) => console.error("Error toggling like:", err));
+  }
+
+  removeCard() {
+    this._element.remove();
+    this._element = null;
   }
 }

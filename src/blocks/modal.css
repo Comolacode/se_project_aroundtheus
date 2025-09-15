@@ -236,14 +236,12 @@
   }
 
   #confirm-delete-modal .modal__container {
-    width: 282px;
-    height: auto;
-    min-height: 181px;
-    padding: 20px;
+    width: 300px;
+    min-height: auto;
   }
 
   #confirm-delete-modal .modal__heading {
-    margin-left: 22px;
+    text-align: left;
     margin-top: 25px;
     font-size: 18px;
     margin-bottom: 20px;
@@ -252,7 +250,7 @@
 
   #confirm-delete-modal .popup__button {
     width: 238px;
-    margin: 0 auto 20px;
+    margin: 20px;
     height: 46px;
     font: 14px;
   }
@@ -260,8 +258,8 @@
   #avatar-edit-modal .modal__container {
     width: 282px;
     height: auto;
-    min-height: 240px;
-    padding-bottom: 20px;
+    min-height: auto;
+    padding: 20px;
   }
 
   #avatar-edit-modal .popup__input {
